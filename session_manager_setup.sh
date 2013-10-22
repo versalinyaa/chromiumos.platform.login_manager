@@ -415,6 +415,7 @@ export PATH=/bin:/usr/bin:/usr/bin/X11
 exec /sbin/session_manager --uid=${USER_ID} ${KILL_TIMEOUT_FLAG} \
     ${HANG_DETECTION_FLAG} -- \
     $CHROME --allow-webui-compositing \
+            --enable-impl-side-painting \
             --enable-delegated-renderer \
             --device-management-url="$DMSERVER" \
             --enable-chrome-audio-switching \
