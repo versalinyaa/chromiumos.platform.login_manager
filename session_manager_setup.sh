@@ -412,8 +412,14 @@ bootstat x-started
 #
 export PATH=/bin:/usr/bin:/usr/bin/X11
 
+#
+# To enable apitrace, uncomment.
+#
+#APITRACE=/usr/bin/apitrace trace --output=/tmp/chrome.$(date --utc "+%Y-%m-%d-%H-%M-%S").apitrace
+
 exec /sbin/session_manager --uid=${USER_ID} ${KILL_TIMEOUT_FLAG} \
     ${HANG_DETECTION_FLAG} -- \
+    $APITRACE \
     $CHROME --allow-webui-compositing \
             --enable-impl-side-painting \
             --enable-delegated-renderer \
